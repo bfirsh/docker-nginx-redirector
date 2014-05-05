@@ -11,6 +11,6 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 ADD default /etc/nginx/sites-available/default
 ADD run /usr/local/bin/run
 
-EXPOSE 80:80
+EXPOSE 80
 CMD ["/usr/local/bin/run"]
 
