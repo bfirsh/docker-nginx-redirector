@@ -1,11 +1,8 @@
 FROM ubuntu:12.04
 MAINTAINER Ben Firshman "ben@firshman.co.uk"
-RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
-RUN apt-get update
-RUN apt-get -y install python-software-properties
+RUN apt-get update -qq && apt-get -qy install python-software-properties
 RUN add-apt-repository -y ppa:nginx/stable
-RUN apt-get update
-RUN apt-get -y install nginx
+RUN apt-get update -qq && apt-get -qy install nginx
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
 ADD default /etc/nginx/sites-available/default
